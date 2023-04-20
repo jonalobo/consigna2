@@ -1,0 +1,22 @@
+{
+  "name": "consigna2",
+  "version": "1.0.0",
+  "description": "consigna 2",
+  "main": "ProductManager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonalobo/consigna2.git"
+  },
+  "author": "Jonathan Alvarado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonalobo/consigna2/issues"
+  },
+  "homepage": "https://github.com/jonalobo/consigna2#readme",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
