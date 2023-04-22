@@ -3,7 +3,6 @@ const fs = require('fs')
 let productos = []
 class ProductManager {
     constructor(title, description, price, thumbnail, code, stock) {
-        this.id = productos.length,
             this.title = title,
             this.description = description,
             this.price = price,
@@ -53,8 +52,17 @@ class ProductManager {
         const data = JSON.stringify(productos)
         guardarProductos('productos.txt', data)
     }
-    deleteProductById() {
-        
+    async deleteProductById(id) {
+        const productosSinParsear = await leerProductos()
+        const demo = JSON.parse(productosSinParsear)
+        demo.map((e)=>{
+            if (e.id === id) {
+                console.log(e)
+            } else {
+                productos.push(e)
+            }
+        })
+        console.log(productos)
     }
 }
 
@@ -73,5 +81,6 @@ producto1.addProduct()
 producto2.addProduct()
 producto3.addProduct()
 producto4.addProduct()
+producto4.deleteProductById(2)
 /* producto4.getProductById(1) */
-producto4.updateProductById(4, { title: 'prueba', description:'prueba',price:'prueba',thumbnail:'prueba',code:'prueba',stock:'prueba' })
+/* producto4.updateProductById(4, { title: 'prueba', description:'prueba',price:'prueba',thumbnail:'prueba',code:'prueba',stock:'prueba' }) */
